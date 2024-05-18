@@ -1,0 +1,84 @@
+.page_2 {
+    width: 100%;
+}
+
+@keyframes example {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.traidat_img {
+    width: 100px;
+    height: 100px;
+}
+
+.page_2_header {
+    color: #117369;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 32px;
+}
+
+.page_2_title {
+    color: #05885F;
+    font-size: 30px;
+    margin-bottom: 16px;
+
+}
+
+.page_2_p {
+    width: 90%;
+    margin: 16px 8px;
+    max-width: 80%;
+}
+
+.margin_left {
+    margin-left: 32px;
+}
+
+.flex_1 {
+    display: flex;
+    align-items: center;
+}
+
+.page_donate {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 20px;
+}
+
+.btn_donate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_donate-1 {
+    color: #4CAF50;
+    background-color: #022C3A;
+    padding: 20px 32px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    border: 2px solid #707070;
+    margin-top: 48px;
+}
+
+.btn_donate-1:hover {
+    background-color: #fff;
+    animation-name: example;
+    animation-duration: 1s;
+}
+
+.left {
+    margin-right: 32px;
+}
+
+.right {
+    margin-left: 32px;
+}

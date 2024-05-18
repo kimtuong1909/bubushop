@@ -1,0 +1,41 @@
+.coupon {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.coupon_sale {
+    display: flex;
+    justify-content: space-around;
+}
+
+.coupon_header {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 32px;
+}
+
+.coupon_link-1 {
+    font-size: 22px;
+    color: #000;
+    font-weight: 800;
+    margin: 32px 0;
+}
+
+.coupon_link-2 {
+    font-size: 22px;
+    color: #686868;
+    margin: 32px 0;
+}
+
+.coupon_link-3 {
+    font-size: 22px;
+    color: #686868;
+    margin: 32px 0;
+}
+
+.coupon_link-4 {
+    font-size: 22px;
+    color: #000;
+    font-weight: 800;
+    margin: 32px 0;
+}

@@ -1,0 +1,39 @@
+.methods {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.margin_bottom {
+    margin-bottom: 32px;
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.methods_header {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.methods_img {
+    width: 10%;
+}
+
+.margin_top {
+    margin-top: 32px;
+}
+
+.methods_box {
+    border: 1px solid #707070;
+    background-color: #F6F6F6;
+    padding: 16px 0;
+    margin-top: 48px;
+
+}
+
+.method_list {
+    width: 90%;
+    margin-left: 5%;
+}

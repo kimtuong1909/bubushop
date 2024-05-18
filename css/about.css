@@ -1,0 +1,25 @@
+.about {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.about_width {
+    width: 100%;
+}
+
+.about_title {
+    color: var(--main-color);
+    text-align: center;
+    font-size: 40px;
+    margin: 32px 0;
+}
+
+.about_title-1 {
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.about_text {
+    font-size: 18px;
+    margin: 16px 0;
+}

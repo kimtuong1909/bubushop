@@ -1,0 +1,24 @@
+.table_donhangcuatoi {
+  margin: 0 auto;
+}
+
+.table_donhangcuatoi td,
+.table_donhangcuatoi th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.table_donhangcuatoi tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table_donhangcuatoi tr:hover {
+  background-color: #ddd;
+}
+
+.table_donhangcuatoi th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--main-color);
+  color: white;
+}

@@ -1,0 +1,177 @@
+.process {
+    color: #000;
+    text-decoration: none;
+}
+
+.background_pay {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.pay {
+    margin-top: 80px !important;
+}
+
+.pay_input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #707070;
+    margin: 8px 0;
+    padding-left: 18px;
+    font-size: 14px;
+}
+
+.pay_img {
+    width: 50px;
+    height: 50px;
+}
+
+.pay_border {
+    margin: 8px 0;
+    width: 100%;
+    border-bottom: 1px solid #707070;
+}
+
+.pay_btn {
+    color: #fff;
+    background-color: #000;
+    padding: 8px 48px;
+    margin: 32px auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+}
+
+.table {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #707070;
+    padding: 12px 0;
+    margin-top: 64px;
+}
+
+.box-2 {
+    width: 95%;
+    margin: 16px auto;
+    margin-bottom: 48px;
+}
+
+.border_box {
+    border: 1px solid #707070;
+
+}
+
+.total {
+    width: 95%;
+    margin: 16px auto;
+}
+
+.pay_input-2 {
+    padding: 6px 0;
+    width: 60%;
+    border: 1px solid #707070;
+    background-color: #FEFDFD;
+}
+
+.pay_btn-3 {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: 1px solid #707070;
+    background-color: #fff;
+}
+
+.flex-2 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.off {
+    background-color: #E5E5E5;
+    color: #BCBBBB;
+}
+
+.btn_accpet {
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+.btn_accpet:hover {
+    color: var(--main-color-2);
+    cursor: pointer;
+}
+
+.save {
+    background-color: var(--main-color);
+}
+
+.save:hover {
+    color: var(--main-color-2);
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    margin: 8px 0;
+}
+
+.input-group-addon:first-child {
+    border-right: 0;
+}
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-group-addon,
+.input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.input-group .form-control,
+.input-group-addon,
+.input-group-btn {
+    display: table-cell;
+}
+
+.form-control {
+    border-radius: 2px;
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+    box-shadow: 0 1px 5px -2px rgb(0 0 0 / 20%);
+    height: 50px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #707070;
+    border-radius: 4px;
+}

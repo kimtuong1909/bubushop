@@ -1,0 +1,105 @@
+:root {
+  --main-color: #117369;
+}
+
+.wrapper {
+  margin-left: 300px;
+}
+
+.danhmuc_them-ip {
+  padding: 12px 30px;
+  box-shadow: 4px;
+  border-radius: 12px;
+  margin-top: 6px;
+}
+
+.danhmuc_them-btn {
+  padding: 8px 24px;
+  border-radius: 12px;
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 18px;
+}
+
+.danhmuc_them-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.menu {
+  width: 100%;
+}
+
+.navbar_1 {
+  background-color: var(--main-color);
+}
+
+.nav_ul {
+  margin: 0;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.nav_li {
+  position: relative;
+  margin-right: 8px;
+  padding: 12px 6px;
+}
+
+.nav_a {
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 0;
+  position: relative;
+}
+
+.nav_a .badge {
+  position: absolute;
+  top: -0;
+  right: -10px;
+  padding: 1px 3px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+}
+
+.header_logo {
+  height: 87px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9dce2;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+}
+
+/* .title {
+  display: flex;
+  justify-content: center;
+} */
+
+.table_lietke td,
+.table_lietke th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.table_lietke tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table_lietke tr:hover {
+  background-color: #ddd;
+}
+
+.table_lietke th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--main-color);
+  color: white;
+}

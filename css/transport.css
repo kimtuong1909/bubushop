@@ -1,0 +1,43 @@
+.transport {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.transport_table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #F6F6F6;
+    margin-bottom: 64px;
+}
+
+td,
+th {
+    border: 1px solid #707070;
+    text-align: left;
+    padding: 24px;
+}
+
+.transport_header {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.transport_center {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.transport_sp {
+    font-size: 18px;
+}
+
+.text_red {
+    color: #FF0000;
+}
+
+.transport_p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    width: 95%;
+}

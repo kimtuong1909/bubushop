@@ -1,0 +1,135 @@
+/* CSS ĐĂNG NHẬP / ĐĂNG KÝ */
+.login {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 64px;
+}
+
+.login-1 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.login-2 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.login_header {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.login_input {
+    width: 100%;
+    padding: 16px 8px;
+    border: 1px solid #707070;
+    background-color: #FEFDFD;
+    margin-top: 8px;
+}
+
+.login_p {
+    text-align: center;
+    margin: 4px 0;
+    opacity: 0.7;
+}
+
+.login_a {
+    text-decoration: none;
+    color: #000;
+}
+
+.login_position {
+    position: relative;
+}
+
+.login_line::before {
+    position: absolute;
+    content: "";
+    width: 45%;
+    height: 1px;
+    top: 48%;
+    background: #e5e5e5;
+    left: 0;
+}
+
+.login_line::after {
+    position: absolute;
+    content: "";
+    width: 45%;
+    height: 1px;
+    top: 48%;
+    background: #e5e5e5;
+    right: 0;
+}
+
+.login_input-1 {
+    margin-top: 32px;
+    width: 100%;
+    padding: 18px 0;
+    margin-bottom: 64px;
+    color: #fff;
+    background-color: var(--main-color);
+    font-size: 20px;
+    font-weight: 750;
+}
+
+.login_input-1:hover {
+    color: var(--main-color-2);
+}
+
+.login_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    background-color: #FEFDFD;
+    border: 1px solid #707070;
+    font-weight: 700;
+}
+
+.login_button:hover {
+    background-color: #DBDBDB;
+}
+
+.text_color {
+    color: #0F4EFD;
+    text-align: center;
+}
+
+.text_color_red {
+    color: #FF0000;
+    text-align: center;
+}
+
+.point {
+    color: #FF0000;
+}
+
+.accept {
+    text-align: center;
+    margin: 4px 0;
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.line_right {
+    border-right: 1px solid #707070;
+    height: 460px;
+    position: relative;
+    justify-content: center;
+
+}
+
+.center-1 {
+    display: flex;
+    justify-content: center;
+}
+
+.hover-1:hover {
+    opacity: 0.8;
+}

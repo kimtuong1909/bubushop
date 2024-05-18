@@ -1,0 +1,56 @@
+.thank {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thanks_header {
+    align-items: center;
+    display: inline-block;
+    font-size: 26px;
+    margin: 32px 0;
+}
+
+.thank_btn {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 24px 76px;
+    font-weight: 700;
+    margin-top: 32px;
+}
+
+.thank_btn:hover {
+    cursor: pointer;
+}
+
+.thanks_p {
+    text-align-last: center;
+    font-weight: 700;
+}
+
+.btn-1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.callnumber {
+    color: var(--main-color);
+}
+
+.btn-2:hover {
+    color: var(--main-color-2);
+}
+
+.thanks_p-1 {
+    text-align: center;
+}
+
+.thank_box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

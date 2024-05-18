@@ -1,0 +1,194 @@
+@media (max-width: 739px) {
+    .container_category_item {
+        display: block !important;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+    }
+
+    .fixed {
+        display: none;
+    }
+
+    .menu_label {
+        background-color: #1abc9c;
+        padding: 9px 12px;
+        color: #fff;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .header_menu {
+        color: var(--main-color-2);
+    }
+
+    .menu_input {
+        display: none;
+    }
+
+    .menu__nav {
+        position: fixed;
+        top: 146px;
+        left: 0;
+        right: 0;
+        background-color: var(--main-color);
+        animation: fadein linear 0.3s;
+        transform: translateX(-100%);
+        transition: transform linear 0.3s;
+        display: block;
+        z-index: 1;
+    }
+
+    .checkbox {
+        display: none;
+    }
+
+    .checkbox:checked~.menu__nav {
+        display: block;
+        transform: translateX(0);
+    }
+
+    .header__nav-link {
+        display: block;
+        margin-left: 12px;
+    }
+
+    .header__nav-link {
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        padding: 15px 8px;
+    }
+
+    .header__subnav-link {
+        padding-left: 16px;
+    }
+
+    /* Footer */
+    .footer_link-2 {
+        margin: 6px 0;
+    }
+
+    .footer_about {
+        margin-bottom: 18px;
+    }
+
+    /* Login */
+    .login-2 {
+        margin-top: 32px !important;
+    }
+
+    /* camon */
+    .thanks_header {
+        text-align: center;
+    }
+
+    /* thoitrangbenvung */
+    .margin_left {
+        margin-left: 8px !important;
+    }
+
+    /* payment_methods */
+    .methods_img {
+        width: 39%;
+    }
+
+    .mobile_notice {
+        padding-left: 16px;
+    }
+
+    /* sanpham */
+    .detail_btn-2 {
+        padding: 0 50px;
+        height: 71px;
+    }
+
+    .detail_ship {
+        width: 100%;
+    }
+}
+
+/* >= Tablet */
+@media (max-width: 740px) {}
+
+/* Tablet - PC low resolution */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .header_menu {
+        display: none;
+    }
+
+    .checkbox {
+        display: none;
+    }
+
+    .menu__nav {
+        display: none;
+    }
+
+    .fixed {
+        display: none;
+    }
+
+    .container_sale {
+        display: none;
+    }
+
+    .container_offer {
+        display: none;
+    }
+
+    .header_navbar {
+        display: none;
+    }
+
+    .icon_img-1 {
+        width: 10%;
+    }
+}
+
+/* > PC low resolution */
+@media (min-width: 1024px) and (max-width: 1239px) {
+    .header_menu {
+        display: none;
+    }
+
+    .checkbox {
+        display: none;
+    }
+
+    .menu__nav {
+        display: none;
+    }
+
+    .fixed {
+        display: none;
+    }
+
+    .container_sale {
+        display: none;
+    }
+
+    .product_name {
+        margin-top: 12px;
+    }
+
+    .icon_img-1 {
+        width: 10%;
+    }
+}
+
+/* PC medium resolution > */
+@media (min-width: 1113px) {
+    .header_menu {
+        display: none;
+    }
+
+    .checkbox {
+        display: none;
+    }
+
+    .menu__nav {
+        display: none;
+    }
+}
