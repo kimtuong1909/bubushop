@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 03, 2023 lúc 06:12 AM
--- Phiên bản máy phục vụ: 10.4.27-MariaDB
--- Phiên bản PHP: 8.2.0
+-- Thời gian đã tạo: Th5 23, 2024 lúc 06:28 AM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbl_admin` (
   `id_admin` int(11) NOT NULL,
   `username` varchar(200) NOT NULL,
-  `password_admin` int(11) NOT NULL,
+  `password_admin` varchar(200) NOT NULL,
   `admin_state` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -39,8 +39,8 @@ CREATE TABLE `tbl_admin` (
 --
 
 INSERT INTO `tbl_admin` (`id_admin`, `username`, `password_admin`, `admin_state`) VALUES
-(1, 'tuong2002@gmail.com', 123, 1),
-(2, 'tuong123@gmail.com', 123, 1);
+(1, 'tuong2002@gmail.com', 'Admin', 1),
+(2, 'tuong123@gmail.com', 'Admin', 1);
 
 -- --------------------------------------------------------
 
@@ -75,19 +75,20 @@ CREATE TABLE `tbl_danhmuc` (
   `id_danhmuc` int(11) NOT NULL,
   `tenDanhMuc` varchar(200) NOT NULL,
   `thuTu` int(11) NOT NULL,
-  `anhDanhMuc` varchar(100) NOT NULL
+  `anhDanhMuc` varchar(100) NOT NULL,
+  `anhBanner` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_danhmuc`
 --
 
-INSERT INTO `tbl_danhmuc` (`id_danhmuc`, `tenDanhMuc`, `thuTu`, `anhDanhMuc`) VALUES
-(1, 'Áo phông', 1, '1687612913_2.png'),
-(2, 'Áo Sơ Mi', 2, '1687612936_SM6.png'),
-(3, 'Áo Hoodie', 3, '1687612965_HD2.png'),
-(4, 'Áo sweater', 4, '1687612980_SWT3.png'),
-(5, 'Quần', 5, '1687612997_dai1.jpg');
+INSERT INTO `tbl_danhmuc` (`id_danhmuc`, `tenDanhMuc`, `thuTu`, `anhDanhMuc`, `anhBanner`) VALUES
+(1, 'Áo phông', 1, '1687612913_2.png', '1715738292_banner ao phong.png'),
+(2, 'Áo Sơ Mi', 2, '1687612936_SM6.png', '1715738307_banner so mi.png'),
+(3, 'Áo Hoodie', 3, '1687612965_HD2.png', '1715738320_banner hoodie.png'),
+(4, 'Áo sweater', 4, '1687612980_SWT3.png', '1715738335_banner swt.png'),
+(5, 'Quần', 5, '1687612997_dai1.jpg', '1715738343_banner quan.png');
 
 -- --------------------------------------------------------
 
@@ -131,31 +132,11 @@ CREATE TABLE `tbl_giaohang` (
 --
 
 INSERT INTO `tbl_giaohang` (`id_giaohang`, `id_giohang`, `id_customer`, `tenNguoiNhan`, `soDienThoai1`, `soDienThoai2`, `diaChi`, `hinhThucThanhToan`, `ghiChu`) VALUES
-(1, 2, 1, 'Nguyễn Kim Tường', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Thanh toán khi nhận hàng', 'giao hàng sớm'),
-(4, 3, 2, 'Đinh Khải Vinh', '0988315678', '', 'Yên Nghĩa,Hà Đông,Hà Nội', 'Visa', 'giao hàng sớm'),
-(5, 0, 2, 'Đinh Khải Vinh', '0988315678', '', 'Yên Nghĩa,Hà Đông,Hà Nội', 'Visa', 'giao hàng sớm'),
-(6, 4, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(7, 5, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(8, 8, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(9, 6, 3, 'Nguyễn Bỉnh Trường Sơn', '0868167202', '0988666888', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(10, 0, 3, 'Nguyễn Bỉnh Trường Sơn', '0868167202', '0988666888', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(11, 7, 4, 'Nguyễn Bỉnh Trường Sơn', '0868167202', '', 'Đông La,Hoài Đức,Hà Nội', 'Momo', ''),
-(12, 0, 4, 'Nguyễn Bỉnh Trường Sơn', '0868167202', '', 'Đông La,Hoài Đức,Hà Nội', 'Momo', ''),
-(13, 9, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(14, 10, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(15, 11, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(16, 12, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(17, 13, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(18, 14, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(19, 15, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(20, 16, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(21, 17, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(22, 18, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(23, 19, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(24, 20, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(25, 21, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(26, 22, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm'),
-(27, 0, 1, 'Nguyễn Kim Tuấn', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Paypal', 'giao hàng sớm');
+(28, 1, 1, 'Nguyễn Kim Tường', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Thanh toán khi nhận hàng', 'giao hàng sớm'),
+(29, 2, 1, 'Nguyễn Kim Tường', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Thanh toán khi nhận hàng', 'giao hàng sớm'),
+(30, 3, 1, 'Nguyễn Kim Tường', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Thanh toán khi nhận hàng', 'giao hàng sớm'),
+(31, 4, 1, 'Nguyễn Kim Tường', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Thanh toán khi nhận hàng', 'giao hàng sớm'),
+(32, 0, 1, 'Nguyễn Kim Tường', '0988513666', '0933068000', 'Đông La,Hoài Đức,Hà Nội', 'Thanh toán khi nhận hàng', 'giao hàng sớm');
 
 -- --------------------------------------------------------
 
@@ -168,35 +149,19 @@ CREATE TABLE `tbl_giohang` (
   `id_giaohang` int(11) NOT NULL,
   `id_customer` int(11) NOT NULL,
   `tinhTrang` varchar(200) NOT NULL,
-  `ngayDat` varchar(200) NOT NULL
+  `ngayDat` varchar(200) NOT NULL,
+  `thanhTien` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_giohang`
 --
 
-INSERT INTO `tbl_giohang` (`id_giohang`, `id_giaohang`, `id_customer`, `tinhTrang`, `ngayDat`) VALUES
-(2, 1, 1, '0', '23-2-2023'),
-(3, 4, 2, '0', '23-2-2023'),
-(4, 6, 1, '0', '23-2-2023'),
-(5, 7, 1, '0', '23-2-2023'),
-(6, 9, 3, '1', '26-5-2023'),
-(7, 11, 4, '0', '26-5-2023'),
-(8, 8, 1, '1', '25-6-2023'),
-(9, 13, 1, '1', '25-6-2023'),
-(10, 14, 1, '1', '25-6-2023'),
-(11, 15, 1, '1', '25-6-2023'),
-(12, 16, 1, '1', '25-6-2023'),
-(13, 17, 1, '1', '25-6-2023'),
-(14, 18, 1, '1', '25-6-2023'),
-(15, 19, 1, '1', '25-6-2023'),
-(16, 20, 1, '1', '25-6-2023'),
-(17, 21, 1, '1', '25-6-2023'),
-(18, 22, 1, '1', '25-6-2023'),
-(19, 23, 1, '1', '25-6-2023'),
-(20, 24, 1, '1', '25-6-2023'),
-(21, 25, 1, '1', '25-6-2023'),
-(22, 26, 1, '1', '25-6-2023');
+INSERT INTO `tbl_giohang` (`id_giohang`, `id_giaohang`, `id_customer`, `tinhTrang`, `ngayDat`, `thanhTien`) VALUES
+(1, 28, 1, '1', '15-5-2024', 3488000),
+(2, 29, 1, '1', '18-5-2024', 1969000),
+(3, 30, 1, '1', '18-5-2024', 1969000),
+(4, 31, 1, '1', '18-5-2024', 899000);
 
 -- --------------------------------------------------------
 
@@ -216,41 +181,12 @@ CREATE TABLE `tbl_giohang_chitiet` (
 --
 
 INSERT INTO `tbl_giohang_chitiet` (`id_giohang_chitiet`, `id_giohang`, `id_sanpham`, `soLuongMua`) VALUES
-(1, 2, 1, 2),
-(2, 2, 2, 1),
-(3, 2, 6, 2),
-(4, 3, 2, 1),
-(5, 3, 36, 2),
-(6, 4, 31, 3),
-(7, 4, 56, 1),
-(8, 5, 1, 2),
-(9, 5, 2, 1),
-(10, 5, 3, 1),
-(11, 6, 2, 1),
-(12, 6, 56, 2),
-(13, 6, 31, 1),
-(14, 7, 1, 1),
-(15, 7, 2, 1),
-(16, 7, 3, 1),
-(17, 7, 4, 1),
-(18, 8, 1, 1),
-(19, 9, 5, 1),
-(20, 10, 8, 1),
-(21, 11, 9, 1),
-(22, 12, 8, 1),
-(23, 13, 5, 5),
-(24, 14, 43, 3),
-(25, 15, 32, 1),
-(26, 16, 44, 1),
-(27, 17, 37, 1),
-(28, 18, 36, 1),
-(29, 19, 12, 1),
-(30, 20, 29, 9),
-(31, 21, 52, 6),
-(32, 22, 56, 6),
-(33, 22, 4, 1),
-(34, 22, 5, 1),
-(35, 22, 1, 1);
+(1, 1, 56, 2),
+(2, 1, 3, 1),
+(3, 1, 36, 1),
+(4, 2, 56, 1),
+(5, 3, 56, 1),
+(6, 4, 57, 1);
 
 -- --------------------------------------------------------
 
@@ -277,8 +213,8 @@ CREATE TABLE `tbl_khachhang` (
 --
 
 INSERT INTO `tbl_khachhang` (`id_customer`, `name_user`, `email`, `password_user`, `address_user`, `phone`, `birthDay`, `birthMonth`, `birthYear`, `gender`, `avatar`) VALUES
-(1, 'Nguyễn Kim Tường', 'tuongkim2002@gmail.com', '123', 'Hà Nội', '0988513666', 19, 9, 2002, 'male', '1688356730_278024678_5004543712932549_889338411501614999_n.jpg'),
-(2, 'Đinh Khải Vinh', 'dinhkhaivinh@gmail.com', '123', 'Hà Nội', '0988315678', 30, 8, 2019, 'male', '1688356492_2559986818f7efadsa9b6e6153.png'),
+(1, 'Nguyễn Kim Tường', 'tuongkim2002@gmail.com', 'Tuong2002', 'Hà Nội', '09885136666', 19, 9, 2002, 'male', '1715738901_78127831_1615926255239485_7560216281568247808_n.jpg'),
+(2, 'Đinh Khải Vinh', 'dinhkhaivinh@gmail.com', 'Vinh3008', 'Hà Nội', '0988315678', 30, 8, 2019, 'male', '1688356492_2559986818f7efadsa9b6e6153.png'),
 (3, 'Nguyễn Bỉnh Trường Sơn', 'son@gmail.com', '123', 'Hà Nội', '0868167202', 0, 0, 0, '', ''),
 (4, 'Nguyễn Bỉnh Trường Sơn', 'nguyenbtson@gmail.com', '123', 'Hà Nội', '0868167202', 0, 0, 0, '', '');
 
@@ -360,8 +296,8 @@ INSERT INTO `tbl_sanpham` (`id_sanpham`, `tenSanPham`, `maSanPham`, `gia`, `soLu
 (53, 'ÁO SƠ MI NAM REGULAR PARTTEN', 'it001', 969000, 28, '1677145231_SM22.png', '', '', 2, '1'),
 (54, 'ÁO SƠ MI UN OVERSHIRT', 'it001', 875000, 28, '1677145240_SM23.png', '', '', 2, '1'),
 (55, 'ÁO SƠ MI MICKEY', 'it0018', 675000, 96, '1677145247_SM24.png', '', '', 2, '1'),
-(56, 'ÁO NỈ MŨ EXPERIMENTAL', 'it0015', 1969000, 28, '1677145334_HD1.png', '', '', 3, '1'),
-(57, 'SWEATSHIRT OVERSIZED', 'it0015', 899000, 28, '1677145379_SWT1.png', '', '', 4, '1'),
+(56, 'ÁO NỈ MŨ EXPERIMENTAL', 'it0015', 1969000, 26, '1677145334_HD1.png', '', '', 3, '1'),
+(57, 'SWEATSHIRT OVERSIZED', 'it0015', 899000, 27, '1677145379_SWT1.png', '', '', 4, '1'),
 (58, 'QUẦN JEANS NAM WASH', 'it023', 975000, 34, '1677145416_dai1.jpg', '', '', 5, '1');
 
 --
@@ -442,19 +378,19 @@ ALTER TABLE `tbl_danhmuc`
 -- AUTO_INCREMENT cho bảng `tbl_giaohang`
 --
 ALTER TABLE `tbl_giaohang`
-  MODIFY `id_giaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_giaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_giohang`
 --
 ALTER TABLE `tbl_giohang`
-  MODIFY `id_giohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_giohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_giohang_chitiet`
 --
 ALTER TABLE `tbl_giohang_chitiet`
-  MODIFY `id_giohang_chitiet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_giohang_chitiet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khachhang`

@@ -37,7 +37,7 @@
                 <div>
                     <label for="name">Tên danh mục:</label>
                     <br>
-                    <input class="danhmuc_them-ip" id="name" type="text" name="tendanhmuc" placeholder="Nhập tên danh mục">
+                    <input class="danhmuc_them-ip" id="name" type="text" name="tendanhmuc" placeholder="Nhập tên danh mục" required>
                 </div>
                 <div>
                     <br>

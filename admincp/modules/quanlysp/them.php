@@ -35,27 +35,27 @@
         <div>
           <label for="name">Tên sản phẩm:</label>
           <br>
-          <input class="danhmuc_them-ip" id="name" type="text" name="tensanpham" placeholder="Nhập tên sản phẩm">
+          <input class="danhmuc_them-ip" id="name" type="text" name="tensanpham" placeholder="Nhập tên sản phẩm" required>
         </div>
         <div>
           <br>
           <label for="code">Mã sản phẩm:</label>
           <br>
-          <input class="danhmuc_them-ip" id="code" type="text" name="masanpham" placeholder="Nhập mã sản phẩm">
+          <input class="danhmuc_them-ip" id="code" type="text" name="masanpham" placeholder="Nhập mã sản phẩm" required>
           <br>
         </div>
         <div>
           <br>
           <label for="price">Giá:</label>
           <br>
-          <input class="danhmuc_them-ip" id="price" type="text" name="gia" placeholder="Nhập giá">
+          <input class="danhmuc_them-ip" id="price" type="text" name="gia" placeholder="Nhập giá" required>
           <br>
         </div>
         <div>
           <br>
           <label for="number">Số lượng:</label>
           <br>
-          <input class="danhmuc_them-ip" id="number" type="text" name="soluong" placeholder="Nhập số lượng">
+          <input class="danhmuc_them-ip" id="number" type="text" name="soluong" placeholder="Nhập số lượng" required>
           <br>
         </div>
         <div>

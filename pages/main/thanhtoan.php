@@ -10,6 +10,7 @@ if (isset($_SESSION['dangky'])) {
             echo ("<script>alert('Nhập địa chỉ gửi hàng');</script>");
             echo ("<script>location.href = 'index.php?quanly=dathang';</script>");
         } else {
+            $thanhTien = 0;
             $date = getdate();
             $ngaydat = $date['mday'] . '-' . $date['mon'] . '-' . $date['year'];
             $id_customer = $_SESSION['id_customer'];
@@ -48,10 +49,14 @@ if (isset($_SESSION['dangky'])) {
                 // Update column bảng giao hàng
                 $sql_update_giaohang = "UPDATE tbl_giaohang SET id_giohang='" . $id_giohang . "' WHERE id_giaohang='$id_giaohang'";
                 mysqli_query($mysqli, $sql_update_giaohang);
+
                 // Thêm giỏ hàng chi tiết
                 foreach ($_SESSION['cart'] as $key => $value) {
                     $sql_giohang_chitiet = "INSERT INTO tbl_giohang_chitiet(id_giohang,id_sanpham,soLuongMua) VALUES ('" . $id_giohang . "','" . $value['id'] . "','" . $value['soluong'] . "')";
                     $query_giohang_chitiet = mysqli_query($mysqli, $sql_giohang_chitiet);
+                    // Update số lượng sản phẩm (trừ số lượng sản phẩm)
+                    $sql_update_soluong = "UPDATE tbl_sanpham SET soLuong = soLuong - " . $value['soluong'] . " WHERE id_sanpham = '" . $value['id'] . "'";
+                    mysqli_query($mysqli, $sql_update_soluong);
                 }
                 // Gửi mail đặt hàng
                 $tieude = "[BUBU_SHOP] ĐƠN HÀNG 31461081_102653199 ĐÃ GIAO THÀNH CÔNG";
@@ -86,6 +91,63 @@ if (isset($_SESSION['dangky'])) {
                 $mail->dathangmail($tieude, $noidung, $maildathang);
                 // Xóa giỏ hàng
                 unset($_SESSION['cart']);
+
+                // Thực hiện thanh toán online
+                if ($hinhthucthanhtoan == 'VNBANK') {
+                    // Tích hợp thanh toán vnpay
+                    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
+                    date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+                    require_once("./vnpay_php/config.php");
+
+                    $vnp_TxnRef = rand(1, 10000); //Mã giao dịch thanh toán tham chiếu của merchant
+                    $vnp_Amount = $thanhTien; // Số tiền thanh toán
+                    $vnp_Locale = 'vn'; //Ngôn ngữ chuyển hướng thanh toán
+                    $vnp_BankCode = ''; //Mã phương thức thanh toán
+                    $vnp_IpAddr = $_SERVER['REMOTE_ADDR']; //IP Khách hàng thanh toán
+
+                    $inputData = array(
+                        "vnp_Version" => "2.1.0",
+                        "vnp_TmnCode" => $vnp_TmnCode,
+                        "vnp_Amount" => $vnp_Amount * 100,
+                        "vnp_Command" => "pay",
+                        "vnp_CreateDate" => date('YmdHis'),
+                        "vnp_CurrCode" => "VND",
+                        "vnp_IpAddr" => $vnp_IpAddr,
+                        "vnp_Locale" => $vnp_Locale,
+                        "vnp_OrderInfo" => "Thanh toan GD: Đặt hàng.",
+                        "vnp_OrderType" => "other",
+                        "vnp_ReturnUrl" => $vnp_Returnurl,
+                        "vnp_TxnRef" => $vnp_TxnRef,
+                        "vnp_ExpireDate" => $expire
+                    );
+
+                    if (isset($vnp_BankCode) && $vnp_BankCode != "") {
+                        $inputData['vnp_BankCode'] = $vnp_BankCode;
+                    }
+
+                    ksort($inputData);
+                    $query = "";
+                    $i = 0;
+                    $hashdata = "";
+                    foreach ($inputData as $key => $value) {
+                        if ($i == 1) {
+                            $hashdata .= '&' . urlencode($key) . "=" . urlencode($value);
+                        } else {
+                            $hashdata .= urlencode($key) . "=" . urlencode($value);
+                            $i = 1;
+                        }
+                        $query .= urlencode($key) . "=" . urlencode($value) . '&';
+                    }
+
+                    $vnp_Url = $vnp_Url . "?" . $query;
+                    if (isset($vnp_HashSecret)) {
+                        $vnpSecureHash =   hash_hmac('sha512', $hashdata, $vnp_HashSecret); //  
+                        $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
+                    }
+                    echo ("<script>location.href = '$vnp_Url';</script>");
+                    die();
+                }
                 // header("Location: index.php?quanly=camon");
                 echo ("<script>location.href = 'index.php?quanly=camon';</script>");
             }

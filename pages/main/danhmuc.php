@@ -31,7 +31,7 @@ $danhmuc = mysqli_fetch_array($query_danhmuc);
     <div class="row">
         <div class="col l-4 m-0 c-0">
             <div>
-                <h3 class="product_title">THƯƠNG HIỆU</h3>
+                <h3 class="product_title">DANH MỤC</h3>
                 <form action="index.php?quanly=timkiem" method="POST">
                     <ul class="product_list">
                         <?php

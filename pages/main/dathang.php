@@ -140,9 +140,9 @@ if ($count == 1) {
                             <label for="1">Thanh Toán Khi Giao Hàng</label>
                         </div>
                         <div class="box">
-                            <input name="hinhthucthanhtoan" <?php if (isset($hinhthucthanhtoan) && $hinhthucthanhtoan == 'Visa') {
+                            <input name="hinhthucthanhtoan" <?php if (isset($hinhthucthanhtoan) && $hinhthucthanhtoan == 'VNBANK') {
                                                                 echo 'checked';
-                                                            } ?> type="radio" id="2" value="Visa">
+                                                            } ?> type="radio" id="2" value="VNBANK">
                             <img class="pay_img" src="images/icon_visa.png" alt="">
                             <label for="2">Thẻ Tín Dụng/Ghi Nợ</label>
                         </div>
